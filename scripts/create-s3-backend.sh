@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -e
-
+export AWS_PAGER="" # Disable AWS CLI paging
 # ====== Configuration ======
 REGION="eu-north-1"
-BUCKET_NAME="my-terraform-mern-states"
+BUCKET_NAME="terraform-layered-mern-rds-state"
 
 echo "🧱 Terraform Remote State S3 Setup"
 echo "----------------------------------"
