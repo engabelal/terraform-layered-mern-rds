@@ -151,6 +151,7 @@ Creates S3 bucket with:
 
 ### Step 2: Deploy All Layers
 ```bash
+chmod +x deploy.sh
 ./deploy.sh apply
 ```
 Deploys in order:
@@ -166,6 +167,8 @@ Destroys in reverse order:
 1. App layer
 2. Database layer
 3. Network layer
+
+> **Note**: The script automatically handles the correct order for both deployment and destruction to respect layer dependencies.
 
 ---
 
@@ -231,6 +234,16 @@ s3://terraform-layered-mern-rds-state/
 ✅ **App state** → Redeploy anytime without affecting DB  
 ✅ **All states** → Versioned, locked, stored in S3 for safety  
 ✅ **Team collaboration** → Engineers work in isolated layers without conflicts  
+
+---
+
+## 📸 Deployment Results
+
+### Network Layer Deployment
+![Network Layer Result](images/result01.png)
+
+### Database & App Layer Deployment
+![Database and App Layer Result](images/result02.png)
 
 ---
 
